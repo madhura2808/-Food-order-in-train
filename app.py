@@ -8,6 +8,10 @@ app = Flask(__name__)
 # In-memory storage for orders (for demonstration purposes)
 orders = []
 
+@app.route('/')
+def home():
+    return render_template('index.html')
+
 def create_connection():
     con = sqlite3.connect('instance/database.db')
     cur = con.cursor()

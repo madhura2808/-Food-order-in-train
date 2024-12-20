@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/order_form.css') }}">
+</head>
+<body>
+    <h1>Order Food in Train</h1>
+    <form action="{{ url_for('order_form') }}" method="POST">
+        <table class="form-table">
+            <tr>
+                <!-- Section 1: Personal and Contact Details -->
+                <td>
+                    <fieldset>
+                        <legend>Personal Details</legend>
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contact">Contact Number:</label>
+                            <input type="tel" id="contact" name="contact" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="train_number">Train Name:</label>
+                            <input type="text" id="train_number" name="train_number" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="compartment_no">Compartment Number:</label>
+                            <input type="number" id="compartment_no" name="compartment_no" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="seat_number">Seat Number:</label>
+                            <input type="number" id="seat_number" name="seat_number" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="Platform_number">Platform Number:</label>
+                            <input type="number" id="Platform_number" name="Platform_number" required>
+                        </div>
+                       
+                    </fieldset>
+                </td>
+
+                <!-- Section 2: Order Details -->
+                <td>
+                    <fieldset>
+                        <legend>Order Details</legend>
+                        <div class="form-group">
+                            <label for="date">Date:</label>
+                            <input type="date" id="date" name="date" required>
+                        </div>
+                       
+
+                        <div class="form-group">
+                            <label for="quantity">Quantity:</label>
+                            <input type="number" id="quantity" name="quantity" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="station_name">Current Station Name:</label>
+                            <select id="station_name" name="station_name" required>
+                                <option value="">Select Station</option>
+                                <option value="Station 1">Station 1</option>
+                                <option value="Station 2">Station 2</option>
+                                <!-- Add more options as needed -->
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="delivery_station_name">Delivery Station Name:</label>
+                            <select id="delivery_station_name" name="delivery_station_name" required>
+                                <option value="">Select Station</option>
+                                <option value="Station 1">Station 1</option>
+                                <option value="Station 2">Station 2</option>
+                                <!-- Add more options as needed -->
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="restaurant_name">Restaurant Name:</label>
+                            <select id="restaurant_name" name="restaurant_name" required>
+                                <option value="">Select Restaurant</option>
+                                <option value="restaurant 1">Restaurant 1</option>
+                                <option value="restaurant 2">Restaurant 2</option>
+                                <!-- Add more options as needed -->
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="travel_time">Arival Time:</label>
+                            <input type="time" id="travel_time" name="travel_time" required>
+                        </div>
+                    </fieldset>
+                </td>
+                <td>
+                    <fieldset>
+                        <legend>Select Food Item</legend>
+                        <!-- Placeholder for additional form fields -->
+                        <div class="form-group">
+                            <!-- Add additional input fields here as needed -->
+                            <label>Food Items:</label>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="food_item_1" name="food_items" value="Sandwich">
+                                <label for="food_item_1">Sandwich</label>
+
+                                <input type="checkbox" id="food_item_2" name="food_items" value="Burger">
+                                <label for="food_item_2">Burger</label>
+
+                                <input type="checkbox" id="food_item_3" name="food_items" value="Pasta">
+                                <label for="food_item_3">Pasta</label>
+
+                                <input type="checkbox" id="food_item_4" name="food_items" value="Salad">
+                                <label for="food_item_4">Salad</label>
+
+                                <input type="checkbox" id="food_item_5" name="food_items" value="Pizza">
+                                <label for="food_item_5">Pizza</label>
+
+                                <input type="checkbox" id="food_item_6" name="food_items" value="Pasta">
+                                <label for="food_item_3">Biryani</label>
+
+                                <input type="checkbox" id="food_item_7" name="food_items" value="Salad">
+                                <label for="food_item_4">Pav Bhaji</label>
+
+                                <input type="checkbox" id="food_item_8" name="food_items" value="Pizza">
+                                <label for="food_item_5">Misal</label>
+                               </div>
+                    </fieldset>
+                </td>
+
+            </tr>
+        </table>
+
+        <button type="submit">Submit Order</button>
+    </form>
+</body>
+
+
+</html>

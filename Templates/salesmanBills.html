@@ -1,0 +1,57 @@
+{% extends 'salesman-dashboard.html' %}
+{% block main %}
+        <!-- MAIN -->
+         <div class="head-title">
+                <h1>
+                    Bill Management</h1>
+            </div>
+<!-- table -->
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Bill No.</th>
+                            <th>Customer Name</th>
+                            <th>Contact No. </th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>101</td>
+                            <td>sonali</td>
+                            <td>54418416515</td>
+                            <td>
+                                <button class="update-btn" onclick="showUpdatePopup(101)">view</button>
+                                <button class="delete-btn" onclick="deleteTrain('trainId')">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>102</td>
+                            <td>Express 2</td>
+                            <td>City C - City D</td>
+                            <td>
+                                <button class="update-btn" onclick="showUpdatePopup(102)">view</button>
+                                <button class="delete-btn" onclick="deleteTrain('trainId')">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>103</td>
+                            <td>Express 3</td>
+                            <td>City E - City F</td>
+                            <td>
+                                <button class="update-btn" onclick="showUpdatePopup(103)">view</button>
+                                <button class="delete-btn" onclick="deleteTrain('trainId')">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+     
+        <!-- MAIN -->
+    </section>
+    <!-- CONTENT -->
+    {% endblock main %}
+

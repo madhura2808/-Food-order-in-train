@@ -1,0 +1,243 @@
+
+
+
+/* MAIN */
+.table-container {
+    width: 80%;
+    margin: 20px auto;
+    overflow-x: auto;
+}
+.add-button-container {
+    text-align: center; /* Center-aligns the button */
+    margin-bottom: 20px; /* Space between the button and the table */
+}
+.btn-add {
+    padding: 10px 20px; /* Button padding */
+    font-size: 16px;    /* Font size for the button text */
+    background-color: #3C91E6; /* Button background color */
+    color: white;       /* Text color */
+    border: none;       /* Remove default border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer;    /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+.add-button:hover {
+    background-color: #2a7bce; /* Darker blue on hover */
+}
+
+
+.head-title {
+    text-align: center; /* Center-aligns the heading text */
+    margin-top: 20px;   /* Space above the heading */
+    margin-bottom: 20px;/* Space below the heading */
+}
+
+/* Popup add Form Styles */
+.popup-form {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+	margin-left: 120px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* On top of other content */
+}
+
+.popup-content {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    position: relative;
+}
+
+.popup-content h2 {
+    margin: 0;
+    padding: 20px 20px 20px;
+    font-size: 24px;
+    text-align: center;
+    background-color: #2a7bce;
+    color: white;
+    position: relative;
+}
+.popup-content .close-btn {
+    position: absolute;
+    top: 50%;
+    right: 20px; /* Adjust distance from the right edge */
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+.popup-content label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.popup-content input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.popup-content .submit-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #faa040;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+	width: 50%;
+	margin-left: 95px;
+}
+
+
+.popup-content .submit-upbtn {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+	width: 50%;
+	margin-left: 95px;
+}
+
+.popup-content .submit-btn:hover {
+    background-color: #f07f05;
+	
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+	width: 40px;
+    border-radius: 5px 5px 5px 5px;
+}
+
+.close-btn:hover{
+	background-color: #f62a2a;
+}
+
+
+
+/* table train  */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff; /* White background for the table */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd; /* Border between rows */
+}
+
+th {
+    background-color: #faa040; /* Green background for column headings */
+    color: #ffffff; /* White text color for column headings */
+    font-weight: bold; /* Make column headings bold */
+    text-transform: uppercase; /* Uppercase text for column headings */
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2; /* Light grey background for even rows */
+}
+
+tr:hover {
+    background-color: #e0e0e0; /* Slightly darker grey for row hover effect */
+}
+
+button {
+    padding: 5px 10px;
+    margin: 0 5px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px; /* Add border-radius for better appearance */
+    color: white; /* Default text color */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+.update-btn {
+    background-color: #3784e9; /* Green background for the Update button */
+}
+
+.update-btn:hover {
+    background-color: #3784e9; /* Darker green on hover */
+}
+
+.delete-btn {
+    background-color: #f44336; /* Red background for the Delete button */
+}
+
+.delete-btn:hover {
+    background-color: #e53935; /* Darker red on hover */
+}
+
+
+
+
+
+@media screen and (max-width: 576px) {
+	#content nav form .form-input input {
+		display: none;
+	}
+
+	#content nav form .form-input button {
+		width: auto;
+		height: auto;
+		background: transparent;
+		border-radius: none;
+		color: var(--dark);
+	}
+
+	#content nav form.show .form-input input {
+		display: block;
+		width: 100%;
+	}
+	#content nav form.show .form-input button {
+		width: 36px;
+		height: 100%;
+		border-radius: 0 36px 36px 0;
+		color: var(--light);
+		background: var(--red);
+	}
+
+	#content nav form.show ~ .notification,
+	#content nav form.show ~ .profile {
+		display: none;
+	}
+
+	#content main .box-info {
+		grid-template-columns: 1fr;
+	}
+
+	#content main .table-data .head {
+		min-width: 420px;
+	}
+	#content main .table-data .order table {
+		min-width: 420px;
+	}
+	#content main .table-data .todo .todo-list {
+		min-width: 420px;
+	}
+}

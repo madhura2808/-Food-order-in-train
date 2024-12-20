@@ -1,0 +1,33 @@
+{% extends 'Admin-Dashboard.html' %}
+{% block main %}
+<main>
+    <div class="hed">
+        <h3>Customer Feedback</h3>
+    </div>
+    {% if feedback %}
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Number</th>
+                <th>Feedback</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for feedback in feedback %}
+            <tr>
+                <td>{{ feedback[1] }}</td>
+                <td>{{ feedback[2] }}</td>
+                <td>{{ feedback[3]}}</td>
+                <td>{{ feedback[4] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+        <p>No Feedbacks Found!</p>                
+    {% endif %}
+</main>
+{% endblock main %}

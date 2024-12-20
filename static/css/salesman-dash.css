@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+:root {
+    --main-color: #f4c05f;
+    --color-dark: #102231;
+    --text-grey: #8390A2;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style-type: none; 
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+.sidebar {   
+    width: 290px;  
+    position: fixed;
+    left: 0;
+    top: 0;    
+    height: 100%;   
+    background: var(--main-color);
+    padding: 1rem 0;
+}
+
+.sidebar-brand {     
+    height: 98px;    
+    padding: 1rem 2rem;
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-brand span { 
+    display: inline-block;
+    padding-right: 1rem;
+}
+
+.sidebar-menu {
+    padding: 1rem 0;
+}
+
+.sidebar-menu ul {
+    padding-left: 0;
+}
+
+.sidebar-menu ul li {
+    margin-bottom: 1.5rem;
+}
+
+.sidebar-menu ul li a {
+    color: #fff;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 2rem;
+    transition: background 0.3s;
+}
+
+.sidebar-menu ul li a:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-menu ul li a.active {
+    background: #fff;
+    color: var(--main-color);
+    border-radius: 30px 0 0 30px;
+}
+
+.sidebar-menu ul li a span {
+    margin-left: 1rem;
+}
+
+.sidebar-menu ul li a.logout .text {
+    color: red;
+}
+
+.main-content {
+    margin-left: 290px;
+    padding: 2rem;
+    background: #f1f5f9;
+    min-height: 100vh;
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.search-wrapper {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-wrapper input {
+    border: none;
+    outline: none;
+    padding: 0.5rem;
+    font-size: 1rem;
+    color: var(--color-dark);
+}
+
+.user-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.user-wrapper img {
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+.user-wrapper h4 {
+    margin-bottom: 0.2rem;
+    color: var(--color-dark);
+}
+
+.user-wrapper small {
+    color: var(--text-grey);
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.card-single {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 7px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 200px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-single div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.card-single h1 {
+    color: var(--color-dark);
+    margin-bottom: 0.5rem;
+}
+
+.card-single span {
+    color: var(--text-grey);
+    font-size: 1.1rem;
+}
+
+.card-single .las {
+    font-size: 3rem;
+    color: var(--main-color);
+}
+
+
+.blink {
+    animation: blink-animation 0.2s steps(2, start) 1;
+}
+
+@keyframes blink-animation {
+    from {
+        visibility: visible;
+    }
+    to {
+        visibility: hidden;
+    }
+}
+
+
+/* General Styles */
+
+/* Table Data Wrapper */
+.table-data {
+    margin-top: 30px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Order Section */
+.order {
+    padding: 40px;
+}
+
+/* Head Section */
+.order .head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    
+}
+
+.order .head h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #333333;
+}
+
+/* Icons */
+.order .head i {
+    font-size: 20px;
+    color: #666666;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: color 0.3s;
+}
+
+.order .head i:hover {
+    color: #333333;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+table thead {
+    background-color: #f0f0f0;
+    text-align: left;
+}
+
+table thead th {
+    padding: 12px 15px;
+    font-weight: 600;
+    color: #333333;
+    border-bottom: 2px solid #dddddd;
+}
+
+table tbody tr {
+    border-bottom: 1px solid #dddddd;
+    transition: background-color 0.3s;
+}
+
+table tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+table tbody td {
+    padding: 12px 15px;
+    color: #555555;
+}
+
+/* Status Badge */
+table tbody td.status {
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+    color: #ffffff;
+}
+
+table tbody td.status.completed {
+    background-color: #28a745; /* Green for completed */
+}
+
+table tbody td.status.pending {
+    background-color: #ffc107; /* Yellow for pending */
+}
+
+table tbody td.status.canceled {
+    background-color: #dc3545; /* Red for canceled */
+}

@@ -1,0 +1,239 @@
+.train-details .filter-container {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.train-details .filter-container label {
+    margin-right: 10px;
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--train-details-text-fg);
+}
+
+.train-details .filter-container select {
+    padding: 8px 12px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: white;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.train-details .filter-container select:hover {
+    background-color: #f2f2f2;
+    color: #000;
+}
+
+.train-details {
+    padding: 20px 30px 30px 30px;
+    border-radius: 30px;
+    margin: 110px auto 50px auto;
+    width: 100%;
+    max-height: 800px;
+    min-height: 400px;
+    background-color: var(--train-details-div);
+}
+
+.train-details .detail-container {
+    border: 1px solid #ddd;
+    /* padding: 25px; */
+    background-color: var(--train-details-inner-divs);
+    border-radius: 20px;
+    margin-top: 50px;
+    padding-bottom: 100px;
+    /* width: 100%; */
+    overflow: auto;
+    max-height: 300px;
+}
+
+.train-details #trainDetails {
+    margin-bottom: 40px;
+}
+
+.train-details .cardHeader h2 {
+    color: var(--train-details-text-fg);
+    font-size: 32px;
+    font-family: 'Poppins';
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+/* .train-details .cardHeader h2::before{
+    content: '';
+    position: absolute;
+    width: 80px;
+    border-radius: 4px;
+    height: 8px;
+    margin-top: 42px;
+    margin-left: 125px;
+    background-color: rgb(255, 196, 0);
+} */
+
+.train-details .text-center {
+    color: var(--train-details-text-fg);
+    margin-bottom: 6px;
+}
+
+.train-details table{
+    border-collapse: collapse;
+    width: 100%;
+    border-left: 1px solid;
+    border-right: 1px solid;
+    overflow: hidden;
+}
+
+.train-details table th, .train-details table td {
+    text-align: left;
+    padding: 8px;
+    white-space: nowrap;
+    color: var(--train-details-text-fg);
+}
+
+.train-details table th {
+    text-align: center;
+    width: 20px;
+    border: 1px solid #6c6767;
+    background-color: black;
+    color: white;
+}
+
+.train-details table td {
+    border-bottom: 1px solid black;
+    text-align: center;
+    font-weight: 700;
+    background-color: #ffffffa8;
+}
+
+.train-details table td.srno {
+    padding-left: 0;
+    text-align: center;
+    border-left: 1px solid black;
+    color: var(--train-details-text-fg);
+}
+
+.train-details table td.leave-reason {
+    width: 50px;
+    text-wrap: wrap; 
+}
+
+.train-details table td p button.approve-btn {
+    padding: 10px 20px;
+    background-color: rgb(31, 233, 31);
+    font-weight: 700;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: auto;
+    text-align: center;
+    width: 100px;
+}
+
+.train-details table td p button.approve-btn:hover {
+    background-color: rgb(65, 185, 65);
+    color: white;
+}
+
+.train-details table td p button.deny-btn {
+    padding: 10px 20px;
+    background-color: rgb(248, 54, 54);
+    font-weight: 700;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: auto;
+    text-align: center;
+    width: 100px;
+}
+
+.train-details table td p button.deny-btn:hover {
+    background-color: rgb(173, 8, 8);
+    color: white;
+}
+
+.train-details table td.status-approved {
+    padding: 0px 20px 0px 20px;
+    text-align: center;
+    height: 2px;
+    width: 100px;
+    font-weight: 900;
+    color: #17a58d;
+}
+
+.train-details table td.status-denied {
+    padding: 0px 20px 0px 20px;
+    text-align: center;
+    height: 2px;
+    width: 100px;
+    font-weight: 900;
+    color: #be1d1d;
+}
+
+/* ====================== Responsive Design ========================== */
+
+@media only screen and (max-width:768px){
+    .train-details{
+        margin-top: 80px;
+    }
+    .train-details .filter-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .train-details .filter-container label {
+        margin-bottom: 10px;
+    }
+
+    .train-details .filter-container select {
+        width: 100%;
+    }
+}
+@media only screen and (min-width: 341px) and (max-width: 419px) {
+    .train-details .cardHeader h2 {
+        font-size: 25px;
+    }
+
+    .train-details .cardHeader h2::before{
+        width: 80px;
+        height: 6px;
+        margin-top: 32px;
+        margin-left: 94px;
+    }
+    .train-details .detail-container {
+        margin-top: 15px;
+        padding-bottom: 30px;
+    }
+    .train-details .text-center {
+        font-size: 18px;
+    }
+    .train-details table th, .train-details table td {
+        font-size: 13px;
+    }
+}
+
+@media only screen and (min-width: 241px) and (max-width: 341.5px){
+    .train-details .cardHeader h2 {
+        font-size: 25px;
+    }
+
+    .train-details .cardHeader h2::before{
+        width: 80px;
+        height: 6px;
+        margin-top: 78px;
+        margin-left: 48px;
+    }
+    .train-details .detail-container {
+        margin-top: 15px;
+        padding-bottom: 30px;
+    }
+    .train-details .text-center {
+        font-size: 18px;
+    }
+    .train-details table th, .train-details table td {
+        font-size: 13px;
+    }
+}

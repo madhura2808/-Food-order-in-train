@@ -1,0 +1,68 @@
+{% extends 'salesman-dashboard.html' %}
+
+{% block main %}
+<main>
+    <div class="table-data">
+        <div class="order">
+            <div class="head">
+                <h3>Customer Orders</h3>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Food Item</th>
+                        <th>Quantity</th>
+                        <th>Train Number</th>
+                        <th>Compartment Number</th>
+                        <th>Seat Number</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>John Doe</td>
+                        <td>johndoe@example.com</td>
+                        <td>Chicken Sandwich</td>
+                        <td>2</td>
+                        <td>12345</td>
+                        <td>A2</td>
+                        <td>24</td>
+                        <td>
+                            <a href="/update/1" class="btn-update">Update</a>
+                            <a href="/delete/1" class="btn-delete">Delete</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Jane Smith</td>
+                        <td>janesmith@example.com</td>
+                        <td>Vegetarian Pizza</td>
+                        <td>1</td>
+                        <td>54321</td>
+                        <td>B1</td>
+                        <td>12</td>
+                        <td>
+                            <a href="/update/2" class="btn-update">Update</a>
+                            <a href="/delete/2" class="btn-delete">Delete</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Mike Johnson</td>
+                        <td>mikejohnson@example.com</td>
+                        <td>Pasta Alfredo</td>
+                        <td>3</td>
+                        <td>67890</td>
+                        <td>C3</td>
+                        <td>8</td>
+                        <td>
+                            <a href="/update/3" class="btn-update">Update</a>
+                            <a href="/delete/3" class="btn-delete">Delete</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>
+{% endblock main %}

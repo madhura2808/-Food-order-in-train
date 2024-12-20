@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/salesman-dash.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/salesman-customer.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/salesmanBill.css') }}">
+    <link href="https://unpkg.com/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebar-brand">
+            <i></i>
+            <h2>Dashboard</h2>
+        </div>
+        <div class="sidebar-menu">
+            <ul>
+                <li>
+                    <a href="/salesmandash" class="active" id="dashboard">
+                        <i class='bx bxs-dashboard'></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/salesmancustomer">
+                        <i class='bx bxs-user'></i>
+                        <span>Customers</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/salesmanbill" id="reports">
+                        <i class='bx bxs-file-doc'></i>
+                        <span>Bill</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" id="transactions">
+                        <i class='bx bxs-receipt'></i>
+                        <span>Transactions</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/logout" class="logout">
+                        <i class='bx bxs-log-out-circle'></i>
+                        <span class="text">Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <h3>
+                <label for="">
+                    <i class="las la-bars"></i>
+                </label>
+                Dashboard
+            </h3>
+            <div class="user-wrapper">
+                <img src="{{ url_for('static', filename='img/2.jpg') }}" width="40px" height="40px" alt="">
+                <div>
+                    <h4>John Doe</h4>
+                    <small>Super admin</small>
+                </div>
+            </div>
+        </header>
+        
+        {% block main %}
+        {% endblock main %}
+    </div>
+
+    <script src="{{ url_for('static', filename='js/salesman-dash.js') }}"></script>
+</body>
+</html>

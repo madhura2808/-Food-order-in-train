@@ -1,0 +1,71 @@
+<!-- NAVBAR -->
+{% extends 'Admin-Dashboard.html' %}
+{% block main %}
+<!-- MAIN -->
+<div class="details train-details">
+    <div class="train">
+        <div class="cardHeader">
+            <h2>Train Details</h2>
+        </div>
+        <div class="container">
+            <!-- Sorting Filter -->
+            <div class="filter-container">
+                <label for="trainFilter">Sort by:</label>
+                <select id="trainFilter" class="form-control">
+                    <option value="all">All</option>
+                    <option value="daily">Daily</option>
+                    <option value="weekly">Weekly</option>
+                    <option value="monthly">Monthly</option>
+                </select>
+            </div>
+            <!-- Train Details Table -->
+            <div class="detail-container" id="trainDetails">
+                <h2 class="text-center"></h2>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Sr No.</th>
+                            <th>Train Number</th>
+                            <th>Train Name</th>
+                            <th>Date</th>
+                            <th>Route</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for train in train %}
+                        <tr class="train-row" data-type="{{ train[4] }}">
+                            <td>{{ loop.index }}</td>
+                            <td>{{ train[1] }}</td>
+                            <td>{{ train[2] }}</td>
+                            <td>{{ train[3] }}</td>
+                            <td>{{ train[4] }}</td>
+                           
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // JavaScript to filter trains based on type
+    document.getElementById('trainFilter').addEventListener('change', function() {
+        const selectedType = this.value;
+        const rows = document.querySelectorAll('.train-row');
+        
+        rows.forEach(row => {
+            if (selectedType === 'all' || row.dataset.type.toLowerCase() === selectedType.toLowerCase()) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    });
+</script>
+<!-- MAIN -->
+{% endblock main %}
+</body>
+</html>

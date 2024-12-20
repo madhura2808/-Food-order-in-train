@@ -1,0 +1,84 @@
+{% extends 'Admin-Dashboard.html' %}
+{% block main %}
+<!-- MAIN -->
+<div class="head-title">
+    <h1>Train Management</h1>
+</div>
+
+<div class="add-button-container mt-3">
+    <button class="btn-add" onclick="showPopup('popup-form')">Add Train</button>
+</div>
+
+<!-- Popup Form for Adding a Train -->
+<div id="popup-form" class="popup-form {% if show_add_popup %}visible{% endif %}">
+    <div class="popup-content">
+        <h2>Add Train</h2>
+        <span class="close-btn" onclick="hidePopup('popup-form')">&times;</span>
+        <form method="POST" action="/add_train">
+            <label for="train-no">Train No:</label>
+            <input type="text" id="train-no" name="train_no" required>
+            <label for="train-name">Train Name:</label>
+            <input type="text" id="train-name" name="train_name" required>
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required>
+            <label for="route">Route:</label>
+            <input type="text" id="route" name="route" required>
+            <button type="submit" class="submit-btn">Add</button>
+        </form>
+    </div>
+</div>
+
+<!-- Popup Form for Updating a Train -->
+<div id="update-popup-form" class="popup-form {% if show_update_popup %}visible{% endif %}">
+    <div class="popup-content">
+        <h2>Update Train</h2>
+        <span class="close-btn" onclick="hidePopup('update-popup-form')">&times;</span>
+        <form method="POST" action="/update_train">
+            <input type="hidden" name="train_id" id="update-train-id">
+            <label for="update-train-no">Train No:</label>
+            <input type="text" id="update-train-no" name="train_no" required>
+            <label for="update-train-name">Train Name:</label>
+            <input type="text" id="update-train-name" name="train_name" required>
+            <label for="update-train-date">Date:</label>
+            <input type="date" id="update-train-date" name="date" required>
+            <label for="update-route">Route:</label>
+            <input type="text" id="update-route" name="route" required>
+            <button type="submit" class="submit-upbtn">Update</button>
+        </form>
+    </div>
+</div>
+
+<!-- Table displaying train information -->
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Train No.</th>
+                <th>Train Name</th>
+                <th>Date</th>
+                <th>Route</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for train in train %}
+            <tr>
+                <td>{{ train[1] }}</td>
+                <td>{{ train[2] }}</td>
+                <td>{{ train[3] }}</td>
+                <td>{{ train[4] }}</td>
+                <td>
+                    <button type="button" class="update-btn" onclick="showUpdatePopup('{{ train[0] }}', '{{ train[1] }}', '{{ train[2] }}', '{{ train[3] }}', '{{ train[4] }}')">Update</button>
+                    <form action="/delete_train" method="POST" style="display:inline;">
+                        <input type="hidden" name="train_id" value="{{ train[0] }}">
+                        <button type="submit" class="delete-btn"
+                        onclick="return confirm('Are you sure you want to delete this train?');">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock main %}

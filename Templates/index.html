@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Website</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <section id="Home">
+        <nav>
+            <div class="logo">
+                <img src="{{ url_for('static', filename='image/logo_train.jpeg') }}" alt="Logo">
+            </div>
+
+            <ul>
+                <li><a href="#Home">Home</a></li>
+                <li><a href="#About">About</a></li>
+                <li><a href="#Menu">Menu</a></li>
+                <li><a href="#Gallary">Gallery</a></li>
+                <li><a href="#Review">Review</a></li>
+                <li><a href="#Feedback">Feedback</a></li>
+            </ul>
+
+            <div class="icon">
+                <form action="{{ url_for('login') }}" method="get">
+                    <button type="submit" class="login-button">Login</button>
+                </form>
+               
+            </div>
+
+        </nav>
+
+        <div class="main">
+            <div class="men_text">
+                <h1>Get Fresh<span>Food</span><br>in an Easy Way</h1>
+            </div>
+            <div class="main_image">
+                <img src="{{ url_for('static', filename='image/train.jpeg') }}" alt="Main Image">
+            </div>
+        </div>
+
+        <p>
+           <b> Traveling by train? Enhance your journey with delicious meals delivered right to your seat! 
+            With our online food booking service, you can choose from a wide variety of cuisines and have your favorite dishes brought to you at any station. 
+            Select your meal, and enjoy fresh, hygienic food from top-rated restaurants. Say goodbye to boring train food and hello to a delightful dining experience on the go! 
+            Order now and make your train journey truly memorable.</b>
+        </p>
+
+        <div class="main_btn">
+            <a href="{{ url_for('order_form') }}">Order Now</a>
+            <i class="fa-solid fa-angle-right"></i>
+        </div>
+    </section>
+
+
+    <!--About-->
+    <div class="about" id="About">
+        <div class="about_main">
+            <div class="image">
+                <img src="{{ url_for('static', filename='image/Food-Plate.png') }}" alt="About Image">
+            </div>
+            <div class="about_text">
+                <h1><span>About</span>Us</h1>
+                <h3>Why Choose us?</h3>
+                <p>
+                    Enjoy best restaurant-quality meals, with each dish meeting stringent food quality and hygiene standards, ensuring a delightful and safe dining experience.
+                    Train menu provides fresh, hot, and delicious meals. They prioritize your health and hygiene, ensuring a satisfying dining experience.
+                    The website allows for easy ordering and secure payment, eliminating the need to carry cash or wait in queues. 
+                    It makes mealtime more enjoyable and stress-free, adding value to the journey.
+                </p>
+            </div>
+        </div>
+        <a href="#" class="about_btn">Order Now</a>
+    </div>
+
+    <!--Menu-->
+    <div class="menu" id="Menu">
+        <h1>Our<span>Menu</span></h1>
+        <div class="menu_box">
+            <!-- Repeat the menu_card block for each menu item -->
+            <div class="menu_card">
+                <div class="menu_image">
+                    <img src="{{ url_for('static', filename='image/buger.jpg') }}" alt="Buger">
+                </div>
+                <div class="small_card">
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+                <div class="menu_info">
+                    <h2>Buger</h2>
+<p></p>                    <h3>200 Rs</h3>
+                    <div class="menu_icon">
+                        
+                    </div>
+                    <a href="#" class="menu_btn">Order Now</a>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="menu_card">
+
+                <div class="menu_image">
+                    <img src="{{ url_for('static', filename='image/biryani.webp') }}" alt="Biryani">
+                  
+                </div>
+        
+                <div class="small_card">
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+        
+                <div class="menu_info">
+                    <h2>Biryani</h2>
+                    <p>
+                    </p>
+                    <h3>150 Rs</h3>
+                    <div class="menu_icon">
+                      
+                    </div>
+                    <a href="#" class="menu_btn">Order Now</a>
+                </div>
+        
+            </div> 
+        
+            <div class="menu_card">
+        
+                <div class="menu_image">
+                    <img src="{{ url_for('static', filename='image/chocolate.jpg') }}" alt="chocolate">
+                  
+                </div>
+        
+                <div class="small_card">
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+        
+                <div class="menu_info">
+                    <h2>Chocolate</h2>
+                    <p>
+                    </p>
+                    <h3>100 Rs</h3>
+                    <div class="menu_icon">
+                       
+                    </div>
+                    <a href="#" class="menu_btn">Order Now</a>
+                </div>
+        
+            </div> 
+        
+            <div class="menu_card">
+        
+                <div class="menu_image">
+                    <img src="{{ url_for('static', filename='image/ice_cream.jpg') }}" alt="ice_cream">
+                    
+                </div>
+        
+                <div class="small_card">
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+        
+                <div class="menu_info">
+                    <h2>Ice Cream</h2>
+                    <p>
+                    </p>
+                    <h3>40 Rs</h3>
+                    <div class="menu_icon">
+                       
+                    </div>
+                    <a href="#" class="menu_btn">Order Now</a>
+                </div>
+        
+            </div> 
+        
+            <div class="menu_card">
+        
+                <div class="menu_image">
+                    <img src="{{ url_for('static', filename='image/Spanchi.jpg') }}" alt="Spanchi">
+                   
+                </div>
+        
+                <div class="small_card">
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+        
+                <div class="menu_info">
+                    <h2>Spanchi</h2>
+                    <p>
+                    </p>
+                    <h3>155 Rs</h3>
+                    <div class="menu_icon">
+                       
+                    </div>
+                    <a href="#" class="menu_btn">Order Now</a>
+                </div>
+        
+            </div> 
+        
+            <div class="menu_card">
+        
+                <div class="menu_image">
+                    <img src="{{ url_for('static', filename='image/sandwich.jpg') }}" alt="sandwich">
+                    
+                </div>
+        
+                <div class="small_card">
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+        
+                <div class="menu_info">
+                    <h2>Sandwich</h2>
+                    <p>
+                    </p>
+                    <h3>170 Rs</h3>
+                    <div class="menu_icon">
+
+                    </div>
+                    <a href="#" class="menu_btn">Order Now</a>
+                </div>
+        
+            </div> 
+            
+        </div>   
+
+
+
+
+
+
+    <!--Gallery-->
+    <div class="gallary" id="Gallary">
+        <h1>Our<span>Gallery</span></h1>
+        <div class="gallary_image_box">
+            <!-- Repeat the gallary_image block for each image -->
+            <div class="gallary_image">
+                <img src="{{ url_for('static', filename='image/gallary_1.jpg') }}" alt="Gallary Image 1">
+                <h3>Food</h3>
+                <a href="#" class="gallary_btn">Order Now</a>
+            </div>
+
+            
+            <div class="gallary_image">
+                <img src="{{ url_for('static', filename='image/gallary_2.jpg') }}" alt="Gallary Image 2">
+
+                <h3>Food</h3>
+                <p>
+                </p>
+                <a href="#" class="gallary_btn">Order Now</a>
+            </div>
+
+            <div class="gallary_image">
+                <img src="{{ url_for('static', filename='image/gallary_3.jpg') }}" alt="Gallary Image 3">
+
+                <h3>Food</h3>
+                <p>
+                </p>
+            </div>
+
+            
+            <div class="gallary_image">
+                <img src="{{ url_for('static', filename='image/gallary_4.jpg') }}" alt="Gallary Image 4">
+                <h3>Food</h3>
+                <p>
+                </p>
+                <a href="#" class="gallary_btn">Order Now</a>
+            </div>
+
+            <div class="gallary_image">
+                <img src="{{ url_for('static', filename='image/gallary_5.jpg') }}" alt="Gallary Image 5">
+
+                <h3>Food</h3>
+                <p>
+                </p>
+                <a href="#" class="gallary_btn">Order Now</a>
+            </div>
+
+            <div class="gallary_image">
+                <img src="{{ url_for('static', filename='image/gallary_6.jpg') }}" alt="Gallary Image 6">
+            
+                <h3>Food</h3>
+                <p>
+                </p>
+                <a href="#" class="gallary_btn">Order Now</a>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+    <!--Review-->
+    <div class="review" id="Review">
+        <h1>Train<span>Names</span></h1>
+        <div class="review_box">
+            <!-- Repeat the review_card block for each review -->
+            <div class="review_card">
+                <div class="review_profile">
+                    <img src="{{ url_for('static', filename='image/trainn2.png') }}" alt="Review 1">
+                </div>
+                <div class="review_text">
+                    <h2 class="name">Rajdhani Express</h2>
+                    <div class="review_icon">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                    <div class="review_social">
+                        <i class="fa-brands fa-facebook-f"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                        <i class="fa-brands fa-twitter"></i>
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </div>
+<p>The Rajdhani Express is a series of passenger train services in India operated by Indian Railways connecting the national capital New Delhi with the capitals or the largest cities of various states. Rajdhani, derived from the Sanskrit means "capital". Introduced in 1969, the trains are amongst the premium services operated by Indian Railways and regularly get a higher priority on the railway network.</p>            
+    </div>
+            </div>
+
+            <div class="review_card">
+
+                <div class="review_profile">
+                    <img src="{{ url_for('static', filename='image/train5.jpg') }}" alt="review 2">
+                </div>
+
+                <div class="review_text">
+                    <h2 class="name">Mahalaxmi Express </h2>
+
+                    <div class="review_icon">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+
+                    <div class="review_social">
+                        <i class="fa-brands fa-facebook-f"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                        <i class="fa-brands fa-twitter"></i>
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </div>
+
+                    <p>
+                    Mahalaxmi Express is the train belonging to South Central Indian Railways. The train is connecting Mumbai CSMT and Kolhapur SCSMT in India. The train service frequency is daily, and is supposedly covering a total distance of 518 km in about 10 hours and 57 minutes. There are 22 coaches available in the express, and it includes AC first class, AC second class, AC third class, sleeper and general unreserved category.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="review_card">
+
+                <div class="review_profile">
+                    <img src="{{ url_for('static', filename='image/train4.jpeg') }}" alt="review 3">
+                </div>
+
+                <div class="review_text">
+                    <h2 class="name">HariPriya Express</h2>
+
+                    <div class="review_icon">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+
+                    <div class="review_social">
+                        <i class="fa-brands fa-facebook-f"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                        <i class="fa-brands fa-twitter"></i>
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </div>
+
+                    <p>
+                        Haripriya Express Train Number 17415 from Tirupati Main to Kolhapur CSMT is a Mail/Express train belonging to Indian Railways in SCR/South Central Zone. It has started services from Wed Sep 23, 1998. It has 30 halts. 127 intermediate Stations between Tirupati Main and Kolhapur CSMT Covering a total distance of 903 km in 19h 35m time.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="review_card">
+
+                <div class="review_profile">
+                    <img src="{{ url_for('static', filename='image/tarin1.jpg') }}" alt="review 4">
+                </div>
+
+                <div class="review_text">
+                    <h2 class="name">Tirupati Express</h2>
+
+                    <div class="review_icon">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+
+                    <div class="review_social">
+                        <i class="fa-brands fa-facebook-f"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                        <i class="fa-brands fa-twitter"></i>
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </div>
+
+                    <p>The Chennai Central–Tirupati Express is an Express train belonging to Southern Railway zone that runs between Chennai Central and Tirupati in India. It is currently being operated with 16053/16054 train numbers on a daily basis.The 16053/Chennai Central–Tirupati Express has an average speed of 43 km/h and covers 147 km in 3h 25m. The 16054/Tirupati–Chennai Central Express has an average speed of 40 km/h and covers 147 km in 3h 40m.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!--feedback-->
+
+<div class="feedback" id="Feedback">
+    <h1><span>FeedBack</span>Now</h1>
+
+    <div class="feedback_main">
+
+        <div class="feedback_image">
+            <img src="{{ url_for('static', filename='image/order_image.png') }}" >
+        </div>
+
+        <form action="/feedback" method="POST">
+
+            <div class="input">
+                <p>Name</p>
+                <input type="text" placeholder="you name">
+            </div>
+
+            <div class="input">
+                <p>Email</p>
+                <input type="email" placeholder="you email">
+            </div>
+
+            <div class="input">
+                <p>Number</p>
+                <input placeholder="you number">
+            </div>
+
+            <div class="input">
+                <p>Your feedback</p>
+                <input placeholder="your feedback">
+            </div>
+
+
+            <button type="submit" class="feedback_btn">Submit</button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+
+ <!--Team-->
+
+    <div class="team">
+        <h1>Our<span>Restaurant</span></h1>
+
+        <div class="team_box">
+            <div class="profile">
+                <img src="{{ url_for('static', filename='image/restro.jpg') }}">
+
+                <div class="info">
+                    <h2 class="name">Masala Magic</h2>
+                    <p class="bio">Location</p>
+
+                    <div class="team_icon">
+                        <i class="fa-brands fa-facebook-f"></i>
+                        <i class="fa-brands fa-twitter"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="profile">
+                <img src="{{ url_for('static', filename='image/restro1.jpg') }}" >
+
+                <div class="info">
+                    <h2 class="name">Chaat Corner</h2>
+                    <p class="bio">Location</p>
+
+                    <div class="team_icon">
+                        <i class="fa-brands fa-facebook-f"></i>
+                        <i class="fa-brands fa-twitter"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="profile">
+                <img src="{{ url_for('static', filename='image/restro2.jpeg') }}" >
+            
+
+                <div class="info">
+                    <h2 class="name"> Garam Masala</h2>
+                    <p class="bio">Location</p>
+
+                    <div class="team_icon">
+                        <i class="fa-brands fa-facebook-f"></i>
+                        <i class="fa-brands fa-twitter"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="profile">
+                <img src="{{ url_for('static', filename='image/restro3.jpg') }}" >
+
+                <div class="info">
+                    <h2 class="name">SpiceOfGoa</h2>
+                    <p class="bio">Location</p>
+
+                    <div class="team_icon">
+                        <i class="fa-brands fa-facebook-f"></i>
+                        <i class="fa-brands fa-twitter"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!--Footer-->
+
+    <footer>
+        <div class="footer_main">
+
+            <div class="footer_tag">
+                <h2>Location</h2>
+                <p></p>
+            </div>
+
+            <div class="footer_tag">
+                <h2>Quick Link</h2>
+                
+            </div>
+
+            <div class="footer_tag">
+                <h2>Contact</h2>
+                <p>+91 8530806103</p>
+                <p>+91 9763254130</p>
+                <p>sonalisakhare2019@gmail.com</p>
+                <p>madhurakumbhar123@gmail.com</p>
+            </div>
+
+            <div class="footer_tag">
+                <h2>Our Service</h2>
+               
+            </div>
+
+            <div class="footer_tag">
+                <h2>Follows</h2>
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-linkedin-in"></i>
+            </div>
+
+        </div>
+
+
+    </footer>
+
+
+
+
+
+
+</body>
+</html>
